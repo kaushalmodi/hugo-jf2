@@ -24,7 +24,7 @@
 }
   */}}
 {{- $.Scratch.Add "jf2feed" slice -}}
-{{- range .Pages -}}
+{{- range (where .Pages "Type" "in" .Site.Params.mainSections) -}}
   {{- $summary_html := (or (.Description | markdownify) .Summary) -}}
   {{- $.Scratch.Add "jf2feed" (dict "type" "entry" "url" .Permalink "published" .Date "name" .Title "summary" ((or (.Description | markdownify) .Summary) | plainify) "content" (dict "html" .Content "text" .Plain)) -}}
 {{- end -}}
