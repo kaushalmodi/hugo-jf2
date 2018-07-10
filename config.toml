@@ -12,7 +12,7 @@
   suffixes = ["json"]
 [outputFormats.JF2Post]
   mediaType = "application/jf2post+json"
-  baseName = "jf2post" # generated file = <baseName>.<mediaType."application/jf2post".suffix> = jf2post.json
+  baseName = "jf2post" # generated file = <baseName>.<mediaType."application/jf2post+json".suffixes[0]> = jf2post.json
   isPlainText = true
 
 # JF2 feed
@@ -29,5 +29,5 @@
   suffixes = ["json"]
 [outputFormats.JF2Feed]
   mediaType = "application/jf2feed+json"
-  baseName = "jf2feed" # generated file = <baseName>.<mediaType."application/jf2feed".suffix> = jf2feed.json
+  baseName = "jf2feed" # generated file = <baseName>.<mediaType."application/jf2feed+json".suffixes[0]> = jf2feed.json
   isPlainText = true
