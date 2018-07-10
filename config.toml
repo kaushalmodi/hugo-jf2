@@ -8,10 +8,10 @@
 # Example:
 #   [outputs]
 #     page = ["HTML", "JF2Post"]
-[mediaTypes."application/jf2post"]
-  suffix = "json"
+[mediaTypes."application/jf2post+json"]
+  suffixes = ["json"]
 [outputFormats.JF2Post]
-  mediaType = "application/jf2post"
+  mediaType = "application/jf2post+json"
   baseName = "jf2post" # generated file = <baseName>.<mediaType."application/jf2post".suffix> = jf2post.json
   isPlainText = true
 
@@ -25,9 +25,9 @@
 #     section = ["HTML", "JF2Feed"]
 #     taxonomy = ["HTML", "JF2Feed"]
 #     taxonomyTerm = ["HTML", "JF2Feed"]
-[mediaTypes."application/jf2feed"]
-  suffix = "json"
+[mediaTypes."application/jf2feed+json"]
+  suffixes = ["json"]
 [outputFormats.JF2Feed]
-  mediaType = "application/jf2feed"
+  mediaType = "application/jf2feed+json"
   baseName = "jf2feed" # generated file = <baseName>.<mediaType."application/jf2feed".suffix> = jf2feed.json
   isPlainText = true
