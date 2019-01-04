@@ -17,5 +17,5 @@
       }
     }
    */}}
-{{- $jf2 := (dict "type" "entry" "author" (dict "type" "card" "url" $.Site.BaseURL "name" $.Site.Author.name) "url" .Permalink "published" .Date "name" .Title "summary" ((or (.Description | markdownify) .Summary) | plainify) "content" (dict "html" .Content "text" .Plain)) -}}
+{{- $jf2 := (dict "type" "entry" "author" (dict "type" "card" "url" site.BaseURL "name" site.Author.name) "url" .Permalink "published" .Date "name" .Title "summary" ((or (.Description | markdownify) .Summary) | plainify) "content" (dict "html" .Content "text" .Plain)) -}}
 {{- $jf2 | jsonify -}}

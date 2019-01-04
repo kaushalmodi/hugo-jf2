@@ -5,7 +5,7 @@ description = "Hugo theme component for creating JF2 feeds"
 homepage = "https://scripter.co"
 tags = ["component", "feed", "jf2", "output-format"]
 features = ["jf2"]
-min_version = "0.44"
+min_version = "0.53"
 
 [author]
   name = "Kaushal Modi"
