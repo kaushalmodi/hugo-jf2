@@ -28,6 +28,10 @@
 {{- if (eq .Kind "home") -}}
     {{ $pages = (where site.RegularPages "Type" "in" site.Params.mainSections) }}
 {{- end -}}
+{{/* Remove the pages that have the disable_feed parameter set to true. */}}
+{{- $pages = where $pages ".Params.disable_feed" "!=" true -}}
+{{/* Remove the pages that have the unlisted parameter set to true. */}}
+{{- $pages = where $pages ".Params.unlisted" "!=" true -}}
 {{- range $pages -}}
     {{- $summary_html := (or (.Description | markdownify) .Summary) -}}
     {{- $.Scratch.Add "jf2feed" (dict "type" "entry" "url" .Permalink "published" .Date "name" .Title "summary" ((or (.Description | markdownify) .Summary) | plainify) "content" (dict "html" .Content "text" .Plain)) -}}
